@@ -1,0 +1,27 @@
+{
+  "name": "aml-circle-counter",
+  "runtime": "octb",
+  "build": {
+    "kind": "aml-single",
+    "entry": "main.aml"
+  },
+  "deploy": {
+    "privacy_class": "sealed",
+    "browser_mode": "native_sealed",
+    "resource_mode": "sealed_read",
+    "ou": "250000",
+    "limits": {
+      "max_stable_bytes": "33554432",
+      "max_assets_bytes": "33554432",
+      "max_inline_value": "65536",
+      "max_wasm_bytes": "33554432"
+    }
+  },
+  "assets": {
+    "mode": "sealed",
+    "root": "site",
+    "key_id": "aml-browser-demo",
+    "padding_class": "4k",
+    "metadata_mode": "reveal"
+  }
+}

@@ -1,0 +1,28 @@
+// Prepared by Denis CMIX for the Octra network.
+// Use, modify, adapt, and redistribute this example as you see fit.
+
+contract CircleCounter {
+  state {
+    counter: int
+    last_label: string
+  }
+
+  constructor() {
+    self.counter = 0
+    self.last_label = "boot"
+  }
+
+  public view fn get_counter(): int {
+    return self.counter
+  }
+
+  public view fn get_label(): string {
+    return self.last_label
+  }
+
+  public fn inc(): int {
+    self.counter += 1
+    self.last_label = "inc:" + to_string(self.counter)
+    return self.counter
+  }
+}
